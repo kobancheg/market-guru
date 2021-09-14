@@ -13,13 +13,13 @@ export class CreateUserDto {
     @IsEmail({}, { message: 'Incorrect email' })
     readonly email: string;
 
-    @ApiProperty({ example: '+7-8634 444 55 66', description: 'Почта' })
+    @ApiProperty({ example: '6344445566', description: 'Telephone' })
     @IsOptional()
     @IsMobilePhone()
     readonly telephone: string;
 
-    @ApiProperty({ example: '12345', description: 'пароль' })
+    @ApiProperty({ example: '12345', description: 'Password' })
     @IsString({ message: 'Only string' })
-    @Length(4, 16, { message: 'Не меньше 4 и не больше 16' })
+    @Length(4, 16, { message: 'Not less than 4 and not more than 16 characters' })
     readonly password: string;
 }
